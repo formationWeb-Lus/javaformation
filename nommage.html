@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAcademy | Conventions de Nomination</title>
+
+  <!-- Favicon et icône -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/vs2015.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>WebAcademy <span id="coursetitle">: Fondamentaux du Web Dynamique</span></h1>
+      <img src="images/logo.png" alt="WebAcademy logo" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+
+    <nav>
+      <span><a href="introductionjava.html">introductionjavascript</a></span>
+      <span class="active"><a href="nommage.html">nommage des dossiers et fichiers</a></span>
+      <span><a href="variable.html">variables JavaScript</a></span>
+    </nav>
+
+    <h2>Activité Semaine 01 : Conventions de Nomination</h2>
+    <h3>Aperçu</h3>
+    <p>Lorsque vous travaillez sur le web, différents facteurs comme le navigateur, le protocole, le système
+      d’exploitation ou les langages peuvent influencer le fonctionnement des fichiers. Même si beaucoup de ces aspects
+      échappent à votre contrôle, vous pouvez garder votre travail cohérent et facile à gérer en appliquant des
+      conventions standard de nomination des fichiers et dossiers.</p>
+    <div class="callout info">
+      <p>
+        « Lorsque vous construisez un site web, vous devez organiser vos fichiers dans une structure logique sur votre
+        ordinateur local, vous assurer qu’ils peuvent communiquer entre eux, et préparer tout votre contenu avant de les
+        mettre en ligne sur un serveur. » – MDN <span class="smaller">(Mozilla Developer Network)</span>
+      </p>
+    </div>
+
+    <h3>Préparation</h3>
+    <ul>
+      <li>Les conventions présentées dans cette leçon seront considérées comme des règles de "bonnes pratiques". Elles
+        doivent être appliquées à tous les fichiers et dossiers que vous créez dans vos travaux.
+        <div class="callout info">
+          <p>Notez que la plupart des organisations ont leurs propres directives et bonnes pratiques pour la gestion des
+            fichiers, y compris la nomination. Ces conventions peuvent varier d’une organisation à l’autre.</p>
+          <p>Voici quelques exemples de <a href="../resources/naming-conventions.html" target="_blank">conventions de
+              nomination</a>.</p>
+        </div>
+      </li>
+
+      <li>À consulter : <a
+          href="https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
+          target="_blank" rel="noopener noreferrer">Gérer les fichiers</a> – MDN</li>
+    </ul>
+
+    <h3>Conventions de Nomination</h3>
+    <p>Vous devrez suivre ces conventions tout au long de ce cours.</p>
+    <ul class="check">
+      <li>Utilisez uniquement des <strong>minuscules</strong>, par exemple <code>produits.html</code>
+        <div class="callout info">
+          <p>Les plateformes et systèmes ne gèrent pas tous la sensibilité à la casse de la même manière. Il est donc
+            important de comprendre ce concept.</p>
+        </div>
+      </li>
+      <li>N’utilisez <strong>PAS</strong> d’<strong>espaces</strong> dans les noms de fichiers ou dossiers. Utilisez des
+        traits d’union, par exemple <code>document-design.html</code>
+        <div class="callout info">
+          <p>Les espaces sont traités de manière incohérente par les navigateurs. Dans les noms de fichiers, un espace
+            est remplacé par <code>%20</code>, ce qui complique la lecture. Préférez les traits d’union.</p>
+        </div>
+      </li>
+      <li>N’utilisez <strong>PAS</strong> de <strong>caractères spéciaux</strong>, par exemple
+        <code>&lt;,&gt;, \, /, #, ?, !</code>
+        <div class="callout info">
+          <p>Ces caractères ont des significations particulières pour l’ordinateur et ne doivent pas être utilisés dans
+            les noms.</p>
+        </div>
+      </li>
+      <li>Les noms doivent être courts et <strong>significatifs</strong>, par exemple
+        <code>scene-hiver-sm.png</code> plutôt que
+        <code>image13-v123523branchecasseeimagelife w200x200.png</code>
+        <div class="callout info">
+          <p>Des noms courts et clairs facilitent le travail des développeurs et des utilisateurs. Des noms
+            significatifs permettent de deviner le contenu du fichier ou dossier.</p>
+        </div>
+      </li>
+      <li>Dans ce cours, les <strong>dossiers standards</strong> seront :
+        <ul>
+          <li><strong>styles</strong> – pour les fichiers CSS</li>
+          <li><strong>images</strong> – pour les images</li>
+          <li><strong>scripts</strong> – pour les fichiers JavaScript</li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr>
+    <nav>
+      <span><a href="index.html">Accueil Semaine 01</a></span>
+    </nav>
+
+  </main>
+  <footer>
+    <p>Copyright &copy; 2025 WebAcademy | Tous droits réservés</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

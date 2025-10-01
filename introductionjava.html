@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAcademy | Introduction à JavaScript</title>
+
+  <!-- Favicon et icônes -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png">
+
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/vs2015.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>WebAcademy <span id="coursetitle">: Fondamentaux du Web Dynamique</span></h1>
+      <img src="images/logo.png" alt="WebAcademy logo" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+    <nav>
+      <span><a href="introductionjava.html">introductionjavascript</a></span>
+      <span class="active"><a href="nommage.html">nommage des dossiers et fichiers </a></span>
+      <span><a href="variable.html">variables JavaScript</a></span>
+    </nav>
+
+    <h2>Activité Semaine 01 : Introduction à JavaScript</h2>
+
+    <h3>Aperçu</h3>
+    <p>
+      JavaScript est un langage de programmation populaire et bien supporté, utilisé pour créer des pages web interactives et dynamiques, des applications mobiles, des applications desktop et plus encore. 
+      C’est un langage interprété de haut niveau conçu pour fonctionner dans les navigateurs web, mais il peut aussi être utilisé côté serveur grâce à des technologies comme Node.js.
+    </p>
+    <p>
+      Dans ce cours, vous apprendrez à appliquer vos connaissances préalables en programmation au web à l’aide de JavaScript. 
+      Ce langage partage les mêmes principes et structures de contrôle que d’autres langages comme Python ou C#.
+    </p>
+
+    <div class="callout info">
+      <p>
+        JavaScript fait partie des trois technologies fondamentales du développement web frontend, avec :
+      </p>
+      <ul>
+        <li>HTML, qui définit la <strong>structure</strong> et le sens d’une page.</li>
+        <li>CSS, qui définit le <strong>style</strong> ou la présentation d’une page.</li>
+        <li>JavaScript, qui gère le <strong>comportement</strong> en fonction des interactions utilisateur et d’autres événements.</li>
+      </ul>
+    </div>
+
+    <details>
+      <summary>Objectifs d’apprentissage associés</summary>
+      <ul>
+        <li>Démontrer une maîtrise de la syntaxe du langage JavaScript.</li>
+        <li>Utiliser JavaScript pour réagir aux événements et modifier dynamiquement le HTML.</li>
+      </ul>
+    </details>
+
+    <h3>Instructions de l’activité</h3>
+
+    <p>Répondez aux questions suivantes. Vous pouvez consulter cette ressource de MDN : 
+      <a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener">Qu’est-ce que JavaScript ?</a> 
+      ou faire vos propres recherches.
+    </p>
+
+    <div class="callout ai">
+      <p>
+        Vous êtes encouragé à utiliser de manière responsable les outils modernes d’intelligence artificielle générative 
+        comme <a href="https://chat.openai.com/" target="_blank" rel="noopener">ChatGPT</a>, 
+        <a href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>, 
+        <a href="https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx" target="_blank" rel="noopener">Bing Chat</a>, 
+        <a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI</a>, etc.  
+        Apprenez à les utiliser avec prudence comme tuteurs à la demande pour clarifier des concepts et obtenir des conseils.
+      </p>
+    </div>
+
+    <ul>
+      <li>Quelle est l’extension des fichiers JavaScript ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <pre><code>.js</code></pre>
+        </details>
+      </li>
+
+      <li>Comment inclut-on JavaScript dans une page web ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <p>On utilise une balise HTML <code>&lt;script&gt;</code>, par exemple :  
+          <pre><code class="html">&lt;script&gt;&lt;/script&gt;</code></pre>
+          Le cours privilégie l’utilisation de fichiers externes, placés dans le dossier <code>scripts</code> et référencés dans le <code>head</code> du document HTML.</p>
+        </details>
+      </li>
+
+      <li>Quelle est la manière standard d’inclure JavaScript dans ce cours ?
+        <ul class="check">
+          <li>Utiliser des fichiers JavaScript externes.</li>
+          <li>Placer les fichiers <code>.js</code> dans le sous-dossier <code>scripts</code>.</li>
+          <li>Référencer le fichier dans le <code>head</code> du document HTML.</li>
+          <li>Utiliser l’attribut <code>defer</code> pour s’assurer que le HTML se charge avant que JavaScript n’interagisse avec lui.</li>
+        </ul>
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <pre><code>&lt;head&gt;
+  ...
+  &lt;script src="scripts/monscript.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+        </details>
+      </li>
+    </ul>
+
+    <h4>Idées reçues courantes</h4>
+    <ul>
+      <li>JavaScript n’est pas le même langage que <a href="https://www.java.com/fr/download/help/whatis_java.html" target="_blank" rel="noopener"><strong>Java</strong></a>. Ce sont deux langages différents avec des syntaxes et des usages distincts.</li>
+      <li>Le pluriel de "code" en programmation est toujours "<strong>code</strong>", pas "codes".  
+        <em>Exemple : "Veuillez relire mon code." et non "Veuillez relire mes codes."</em>
+      </li>
+      <li>JavaScript n’est pas limité au navigateur. Avec Node.js, il peut aussi être utilisé côté serveur. C’est un langage mature, puissant et polyvalent.</li>
+    </ul>
+
+    <hr>
+    <nav>
+      <span><a href=>Accueil Semaine 01</a></span>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; 2025 WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

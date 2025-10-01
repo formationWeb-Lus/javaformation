@@ -1,0 +1,149 @@
+/* ------------------------
+   WebAcademy - Feuille de style
+   ------------------------ */
+
+:root {
+  --primary-color: #2c3e50;    /* Bleu foncé élégant */
+  --secondary-color: #3498db;  /* Bleu clair pour les accents */
+  --light-bg: #f5f7fa;
+  --dark-bg: #1a252f;
+  --text-color: #333;
+  --highlight: #e67e22;        /* Accent orange */
+  --radius: 10px;
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+}
+
+header .page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header #coursetitle {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+header img.logo {
+  height: 50px;
+}
+
+/* NAVIGATION */
+nav {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background: var(--secondary-color);
+  color: white;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: var(--highlight);
+}
+
+nav .active a {
+  background: var(--highlight);
+}
+
+/* CONTENU PRINCIPAL */
+main.page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--highlight);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* LISTES */
+ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul.check li {
+  margin-bottom: 0.8rem;
+  list-style: "✔ " inside;
+  color: var(--text-color);
+}
+
+/* CALLOUTS (encadrés d’infos) */
+.callout {
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+.callout.info {
+  background: #eaf4fb;
+  border-left: 5px solid var(--secondary-color);
+}
+
+/* LIENS */
+a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--highlight);
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}

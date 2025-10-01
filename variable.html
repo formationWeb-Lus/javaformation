@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 131 | Variables</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" href="images/favicon-16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/vs2015.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>WDD 131<span id="coursetitle"> : Fondamentaux du Web Dynamique</span></h1>
+      <img src="images/webacademy-logo.png" alt="WebAcademy logo" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+
+    <nav>
+      <span><a href="introductionjava.html">introductionjava</a></span>
+      <span class="active"><a href="nommage.html">nommage de dossiers et fichiers</a></span>
+      <span><a href="variables.html">variables javascript</a></span>
+    </nav>
+
+    <h2>Semaine 01 : Activité – Variables en JavaScript</h2>
+    <h3>Vue d’ensemble</h3>
+    <p>Les variables sont utilisées pour <strong>stocker</strong> des valeurs. Ces valeurs peuvent être
+      <strong>primitives</strong> comme un nombre, une chaîne (string), un booléen ou null, ou bien des <strong>objets</strong>
+      comme une fonction, une classe ou un objet littéral. Elles peuvent être utilisées comme entrée dans des expressions,
+      lors de traitements ou pour afficher des résultats.
+    </p>
+
+    <div class="callout info">
+      <p>Pour mieux comprendre le fonctionnement de JavaScript, ce cours couvre les concepts de base et les structures
+        de contrôle, y compris les variables. Ces structures sont communes à <strong>tous</strong> les langages de programmation.</p>
+    </div>
+
+    <h3>Préparation</h3>
+    <p>Répondez aux questions suivantes en utilisant ces ressources ou vos propres recherches :</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/First_steps/Variables" target="_blank"
+          rel="noopener">Stocker les informations — Variables</a> &ndash; MDN</li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Data_structures" target="_blank">Types et structures de données</a> &ndash; MDN</li>
+    </ul>
+
+    <ol>
+      <li>Quelle est la différence entre <code>const</code> et <code>let</code> ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <ul>
+            <li><code>const</code> : Déclare une variable constante qui ne peut pas être réassignée.
+              <pre><code class="javascript">const currentYear = new Date().getFullYear();</code></pre>
+            </li>
+            <li><code>let</code> : Déclare une variable réassignable.
+              <pre><code class="javascript">let isLoggedIn = false;</code></pre>
+            </li>
+          </ul>
+        </details>
+      </li>
+
+      <li>Définissez le type de données <em>string</em>.
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <p>Une chaîne de caractères est une séquence de symboles (lettres, chiffres, espaces, etc.) considérée comme une seule unité.</p>
+        </details>
+      </li>
+
+      <li>Quel est le type de données de chacun des éléments suivants ?
+        <ul>
+          <li><span title="string">"101"</span></li>
+          <li><span title="number">101</span></li>
+          <li><span title="boolean">true</span></li>
+          <li><span title="null">null</span></li>
+          <li><span title="undefined">undefined</span></li>
+        </ul>
+      </li>
+
+      <li>Quelles guillemets utiliser pour entourer les chaînes : simples ('), doubles ("), ou backticks (`) ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <p>En JavaScript, vous pouvez utiliser les trois, mais les backticks sont utiles pour les chaînes multilignes et les expressions dynamiques.</p>
+        </details>
+      </li>
+
+      <li>Qu’est-ce qu’un <a href="../resources/javascript-template-literals.html">template literal</a> et pourquoi l’utiliser ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <p>Ce sont des chaînes entourées de backticks qui permettent d’insérer des variables et expressions facilement.</p>
+        </details>
+      </li>
+
+      <li>Qu’est-ce qu’un <strong>commentaire de code</strong> en JavaScript ?
+        <details>
+          <summary>Vérifiez votre compréhension</summary>
+          <p>Les commentaires servent à annoter le code, par exemple :</p>
+          <pre><code class="javascript">// Ceci est un commentaire
+/* Ceci est un commentaire multi-ligne */</code></pre>
+        </details>
+      </li>
+    </ol>
+
+    <h3>Instructions de l’activité</h3>
+    <ol>
+      <li>Expérimentez avec du code sur <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a> pour tester vos variables.</li>
+      <li>Lisez les instructions et testez différents types de déclarations (<code>const</code>, <code>let</code>).</li>
+    </ol>
+
+    <hr>
+    <nav>
+      <span><a href="index.html">Accueil semaine 01</a></span>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+</html>

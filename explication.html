@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leçon DOM - WebAcademy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; margin: 20px; line-height: 1.6; }
+    h1, h2, h3 { color: #2c3e50; }
+    pre { background: #1e1e1e; color: #d4d4d4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    code { font-family: monospace; }
+    .example { background-color: #ecf0f1; padding: 10px; margin: 10px 0; border-left: 5px solid #3498db; }
+    .explanation { margin: 10px 0; padding: 10px; background-color: #f1f1f1; border-left: 4px solid #2ecc71; }
+  </style>
+</head>
+<body>
+
+  <h1>Manipulation du DOM en JavaScript</h1>
+
+  <h2>Introduction</h2>
+  <p>Bienvenue à cette leçon de JavaScript avec <strong>WebAcademy</strong>. Aujourd'hui, nous allons apprendre à manipuler le DOM, le <strong>Document Object Model</strong>. 
+  Le DOM est une représentation en mémoire de votre page HTML. Grâce au DOM, JavaScript peut : </p>
+  <ul>
+    <li>Modifier le contenu de la page</li>
+    <li>Changer le style des éléments</li>
+    <li>Ajouter ou supprimer des éléments dynamiquement</li>
+    <li>Rendre la page interactive en réagissant aux actions de l'utilisateur</li>
+  </ul>
+  <div class="explanation">
+    <strong>Explication :</strong> Imaginez le DOM comme un arbre. Chaque balise HTML est un "noeud" de cet arbre, et JavaScript peut naviguer dans cet arbre pour manipuler chaque noeud.
+  </div>
+
+  <div class="example">
+    <h3>Exemple : Structure du DOM</h3>
+    <pre>
+HTML
+ └── body
+      ├── h1
+      ├── p
+      └── div
+           └── button
+    </pre>
+    <div class="explanation">
+      <strong>Explication :</strong> Ici, le body contient plusieurs éléments. On peut sélectionner et modifier chacun de ces éléments avec JavaScript.
+    </div>
+  </div>
+
+  <h2>1. Sélectionner un élément</h2>
+  <p>Avant de manipuler un élément, nous devons le sélectionner avec JavaScript :</p>
+  <pre><code class="javascript">const titre = document.querySelector('h1');</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong> 
+    <ul>
+      <li><code>document.querySelector()</code> : sélectionne le premier élément correspondant au sélecteur CSS.</li>
+      <li><code>'h1'</code> : indique qu’on veut sélectionner la balise &lt;h1&gt;.</li>
+      <li>Le résultat est stocké dans la variable <code>titre</code> pour pouvoir l'utiliser ensuite.</li>
+    </ul>
+  </div>
+
+  <h2>2. Modifier le contenu d’un élément</h2>
+  <pre><code class="javascript">titre.textContent = "Bienvenue à WebAcademy !"; // Change uniquement le texte
+titre.innerHTML = "Bienvenue à <strong>WebAcademy</strong> !"; // Change le texte et le HTML</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong>
+    <ul>
+      <li><code>textContent</code> modifie uniquement le texte et ne prend pas en compte les balises HTML.</li>
+      <li><code>innerHTML</code> permet d'ajouter des balises HTML dans le contenu.</li>
+      <li>⚠️ Attention : utiliser <code>innerHTML</code> avec du texte venant de l'utilisateur peut créer des problèmes de sécurité.</li>
+    </ul>
+  </div>
+
+  <h2>3. Modifier le style</h2>
+  <pre><code class="javascript">titre.style.color = "blue";      // Change la couleur du texte
+titre.style.textAlign = "center"; // Centre le texte</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong> Chaque propriété CSS est traduite en JavaScript avec la notation camelCase. Par exemple : <code>background-color</code> devient <code>backgroundColor</code>.
+  </div>
+
+  <h2>4. Créer un nouvel élément</h2>
+  <pre><code class="javascript">const paragraphe = document.createElement('p'); // Crée une nouvelle balise &lt;p&gt;
+paragraphe.textContent = "Ceci est un paragraphe ajouté par JavaScript."; // Ajoute du texte
+document.body.appendChild(paragraphe); // Ajoute le paragraphe à la fin du body</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong> 
+    <ul>
+      <li><code>document.createElement()</code> : crée un nouvel élément HTML.</li>
+      <li><code>appendChild()</code> : ajoute l’élément créé à un parent existant dans le DOM.</li>
+      <li>On peut ainsi créer du contenu dynamique pour la page.</li>
+    </ul>
+  </div>
+
+  <h2>5. Supprimer un élément</h2>
+  <pre><code class="javascript">paragraphe.remove(); // Supprime l'élément du DOM</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong> 
+    <ul>
+      <li>La méthode <code>remove()</code> supprime directement l’élément du DOM.</li>
+      <li>On peut également utiliser <code>parent.removeChild(element)</code> si on connaît le parent.</li>
+    </ul>
+  </div>
+
+  <h2>6. Exemple pratique : Liste dynamique</h2>
+  <p>HTML nécessaire :</p>
+  <pre><code>&lt;input type="text" id="favchap" placeholder="Entrez un chapitre"&gt;
+&lt;button&gt;Ajouter&lt;/button&gt;
+&lt;ul&gt;&lt;/ul&gt;</code></pre>
+  <p>JavaScript :</p>
+  <pre><code class="javascript">// Sélection des éléments
+const input = document.querySelector('#favchap');
+const button = document.querySelector('button');
+const list = document.querySelector('ul');
+
+// Fonction appelée quand on clique sur le bouton
+button.addEventListener('click', () =&gt; {
+    // Crée un nouvel élément &lt;li&gt;
+    const li = document.createElement('li');
+    li.textContent = input.value; // Met le texte du champ input dans le li
+
+    // Crée un bouton pour supprimer cet élément
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '❌';
+
+    // Ajoute le bouton au li
+    li.append(deleteButton);
+
+    // Ajoute le li à la liste
+    list.append(li);
+
+    // Événement pour supprimer le li
+    deleteButton.addEventListener('click', () =&gt; {
+        list.removeChild(li);
+    });
+
+    // Vide le champ input après ajout
+    input.value = '';
+});</code></pre>
+  <div class="explanation">
+    <strong>Explication :</strong>
+    <ul>
+      <li>On récupère les éléments HTML pour pouvoir les manipuler.</li>
+      <li>Chaque clic sur le bouton crée un nouveau chapitre dans la liste.</li>
+      <li>Chaque chapitre a son propre bouton de suppression.</li>
+      <li>On vide le champ de saisie pour que l’utilisateur puisse ajouter un nouveau chapitre.</li>
+    </ul>
+  </div>
+
+  <h2>Conclusion</h2>
+  <p>Grâce à cette leçon, vous savez maintenant :</p>
+  <ul>
+    <li>Sélectionner un élément HTML</li>
+    <li>Modifier son contenu et son style</li>
+    <li>Créer et supprimer des éléments</li>
+    <li>Ajouter de l’interactivité avec des événements</li>
+  </ul>
+  <p>Dans la prochaine leçon, nous verrons comment gérer différents types d’événements pour rendre nos pages encore plus dynamiques.</p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+</html>
+

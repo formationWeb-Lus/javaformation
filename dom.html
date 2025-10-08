@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 131 | JavaScript : Manipulation du DOM</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://webacademy.github.io/web-program/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://webacademy.github.io/web-program/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://webacademy.github.io/web-program/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>Wdd 131<span id="coursetitle"> : Fondamentaux du Web Dynamique</span></h1>
+      <img src="images/logo.png" alt="Logo WebAcademy" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+    <nav>
+      <span><a href="../">Le Document Object Model (DOM)</a></span>
+      
+    </nav>
+    <h2>Semaine 02 – Activité d’apprentissage : Le Document Object Model (DOM)</h2>
+
+    <h3>Présentation</h3>
+    <p>Une compétence essentielle pour tout développeur web front-end est la capacité à manipuler le DOM (<a
+        href="https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction" target="_blank"
+        rel="noopener">Document Object Model</a>), un objet JavaScript créé après le rendu initial du document par le navigateur.
+      Manipuler le DOM signifie lire, modifier, mettre à jour ou supprimer des éléments du document, y compris leurs propriétés CSS, de manière dynamique. En résumé, le DOM est la représentation arborescente du contenu HTML.</p>
+    <p>Le but de cette activité est d’introduire le DOM HTML et d’apprendre à manipuler le document à l’aide de JavaScript.</p>
+
+    <details class="clo">
+      <summary>Résultats d’apprentissage associés</summary>
+      <p>• Démontrer la maîtrise de la syntaxe du langage JavaScript.<br>
+         • Utiliser JavaScript pour répondre aux événements et modifier dynamiquement le HTML.</p>
+    </details>
+
+    <ul>
+      <li>Référence : <a
+          href="https://developer.mozilla.org/fr/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+          target="_blank" rel="noopener">Manipulation des documents</a> – MDN.
+        <div class="callout info">
+          <p class="smaller">L’exemple <a
+              href="https://mdn.github.io/learning-area/javascript/apis/document-manipulation/shopping-list-finished.html"
+              target="_blank" rel="noopener">Liste de courses dynamique</a> à la fin de l’article MDN vous aidera à compléter cette activité.</p>
+        </div>
+      </li>
+
+      <li>Exercices pratiques : <strong>Concepts courants de manipulation du DOM</strong>.
+        <ul>
+          <li><strong>Sélectionner</strong> un élément HTML :
+            <pre><code class="javascript">const article = document.querySelector('article');</code></pre>
+          </li>
+
+          <li><strong>Modifier</strong> le contenu HTML :
+            <pre><code class="javascript">article.innerHTML = 'Le innerHTML supporte &lt;strong&gt;les balises HTML&lt;/strong&gt;. textContent non.';</code></pre>
+          </li>
+
+          <li><strong>Modifier</strong> un style CSS en ligne :
+            <pre><code class="javascript">article.style.textAlign = 'right';</code></pre>
+          </li>
+
+          <li><strong>Changer</strong> un attribut :
+            <pre><code class="javascript">article.setAttribute('class', 'actif');</code></pre>
+            <div class="callout info">
+              <p>Alternative : utiliser <code>classList</code> pour ajouter, retirer ou basculer des classes :</p>
+              <pre><code class="javascript">article.classList.add('actif');</code></pre>
+            </div>
+          </li>
+
+          <li><strong>Créer</strong> un élément :
+            <pre><code class="javascript">const paragraphe = document.createElement('p');</code></pre>
+          </li>
+
+          <li><strong>Ajouter</strong> un élément :
+            <pre><code class="javascript">article.appendChild(paragraphe);
+article.append(paragraphe, 'Texte ajouté !');</code></pre>
+          </li>
+
+          <li><strong>Supprimer</strong> un élément :
+            <pre><code class="javascript">article.removeChild(paragraphe);
+article.remove();</code></pre>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Instructions de l’activité</h3>
+    <img class="floatright" src="../images/BOMApp.png" alt="Exemple d’application DOM" loading="lazy" width="350">
+
+    <div class="callout info">
+      <p>Cette petite application servira de base pour les activités futures. Nous commençons ici avec la structure et les manipulations DOM de base.</p>
+    </div>
+
+    <p>L’application permet à l’utilisateur d’ajouter des chapitres favoris et de les afficher dans une liste mise à jour automatiquement. Les éléments peuvent aussi être supprimés.</p>
+
+    <ol>
+      <li>Créez un fichier HTML nommé <strong>chapitres.html</strong> dans le dossier <strong>semaine02</strong>.</li>
+      <li>Ajoutez les balises meta de base et un titre approprié.</li>
+      <li>Créez un fichier CSS et un fichier JS dans les sous-dossiers <strong>styles</strong> et <strong>scripts</strong> du dossier <strong>semaine02</strong>.</li>
+
+      <li>Copiez l’interface de base depuis ce CodePen ☼ <a href="https://codepen.io/webacademy/pen/QwwKMzL" target="_blank" rel="noopener">Top 10 Chapitres</a>.</li>
+
+      <li>Dans votre fichier JS, déclarez trois variables pour les éléments <strong>input</strong>, <strong>button</strong> et <strong>list</strong> :
+        <pre><code class="javascript">const input = document.querySelector('#favchap');
+const button = document.querySelector('button');
+const list = document.querySelector('ul');</code></pre>
+      </li>
+
+      <li>Créez un élément <code>li</code> pour chaque entrée :</li>
+      <pre><code class="javascript">const li = document.createElement('li');</code></pre>
+
+      <li>Créez un bouton de suppression :</li>
+      <pre><code class="javascript">const deleteButton = document.createElement('button');</code></pre>
+
+      <li>Ajoutez le texte de l’entrée :
+        <pre><code class="javascript">li.textContent = input.value;</code></pre>
+      </li>
+
+      <li>Ajoutez le symbole ❌ au bouton :
+        <pre><code class="javascript">deleteButton.textContent = '❌';</code></pre>
+      </li>
+
+      <li>Ajoutez le bouton à l’élément <code>li</code> :
+        <pre><code class="javascript">li.append(deleteButton);</code></pre>
+      </li>
+
+      <li>Ajoutez ensuite <code>li</code> à la liste non ordonnée :
+        <pre><code class="javascript">list.append(li);</code></pre>
+      </li>
+    </ol>
+
+    <div class="callout warning">
+      <p>À ce stade, votre application ne fonctionnera pas encore complètement. L’activité suivante expliquera comment réagir aux événements (clics, saisie, etc.).</p>
+    </div>
+
+    <div class="callout info">
+      <p>Pensez à l’accessibilité ! Par exemple, un bouton "❌" seul n’est pas compréhensible par un lecteur d’écran. Ajoutez un attribut <code>aria-label</code> comme <code>aria-label="Supprimer Alma 5"</code>.</p>
+    </div>
+
+    <h3>Soumission</h3>
+    <ul>
+      <li>Enregistrez fréquemment votre travail. D’autres fonctionnalités seront ajoutées dans la prochaine activité.</li>
+    </ul>
+
+    <hr>
+    <nav>
+      <span><a href="index.html">Accueil Semaine 02</a></span>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="../scripts/prevent-code-select.js"></script>
+</body>
+</html>

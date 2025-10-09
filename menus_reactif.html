@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAcademy | Menu Responsive "Hamburger"</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://webacademy.dev/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://webacademy.dev/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://webacademy.dev/assets/favicon-16x16.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css">
+
+  <script src="https://js-cdn.dynatrace.com/jstag/16294a69b33/bf29241ovs/ca896ddec2fd3e19_complete.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>WebAcademy <span id="coursetitle">: Fondamentaux du Web Dynamique</span></h1>
+      <img src="images/logo.svg" alt="Logo WebAcademy" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+    <nav>
+      <span><a href=>Menus Reactifs</a></span>
+      
+    </nav>
+
+    <h2>Semaine 02 – Activité d’Apprentissage : Menus Responsives</h2>
+
+    <h3>Vue d’ensemble</h3>
+    <p>Le but de cette activité est de construire un menu responsive en utilisant JavaScript.
+      Le menu s’adaptera à différentes tailles d’écran et réagira également lorsqu’un utilisateur
+      cliquera sur le bouton « hamburger » (&equiv;).  
+      En conception responsive, notre objectif est d’offrir aux utilisateurs une expérience fluide et intuitive.
+    </p>
+
+    <details>
+      <summary>Résultat d’apprentissage associé</summary>
+      <p class="smaller">Développer des pages web responsives qui respectent les bonnes pratiques et utilisent un HTML et CSS valides.</p>
+    </details>
+
+    <h3>Préparation</h3>
+    <p>Les menus hamburger ou les structures équivalentes soutiennent la conception responsive.
+      Ils permettent d’alléger la mise en page en économisant de l’espace sur la page.  
+      Ce symbole est largement reconnu par les utilisateurs, même s’ils ne savent pas toujours qu’il s’appelle « menu hamburger ».
+    </p>
+
+    <p>Voici un exemple tiré de Google Maps.</p>
+    <p>
+      <img src="../images/hamburger-menu-google-maps.png" alt="Capture d’écran de Google Maps – Exemple de bouton hamburger" loading="lazy" width="500">
+    </p>
+
+    <ol>
+        <ul>
+    
+          <li>CodePen ☼ <a href="https://codepen.io/WebAcademy/pen/yyBwGdO" target="_blank" rel="noopener">Menu Responsive</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>Instructions de l’activité</h3>
+    <ol>
+      <li>Dans votre propre compte CodePen, ouvrez ce CodePen ☼ <a href="https://codepen.io/WebAcademy/pen/GgKezzJ" target="_blank" rel="noopener">Menu Responsive – Départ</a></li>
+
+      <li><strong>CSS</strong> : Déplacez le bouton du menu hamburger dans le coin supérieur droit de l’écran en ajoutant les déclarations CSS appropriées aux endroits indiqués (______).</li>
+
+      <li><strong>JavaScript</strong> : Complétez le code JavaScript en remplissant les trois (3) zones vides (______) à l’intérieur de l’écouteur d’événement du bouton de menu.
+        <div class="callout info">
+          Cet exemple écoute un événement déclenché par l’utilisateur et alterne la classe donnée pour l’élément de navigation.  
+          Le nom de la classe existe déjà dans le CSS et est prêt à être appliqué.
+        </div>
+      </li>
+
+      <li><strong>CSS</strong> : Changez l’icône de fermeture du bouton hamburger (❎) pour une autre icône de votre choix.</li>
+
+      <details>
+        <summary>Que fait la syntaxe <code>::</code> dans un sélecteur CSS ?</summary>
+        <p>Cette syntaxe permet de sélectionner un <a href="https://blog.logrocket.com/css-pseudo-elements-guide/" target="_blank" rel="noopener">pseudo-élément</a>, ce qui permet d’ajouter du contenu à un élément existant sans modifier le HTML.</p>
+      </details>
+
+      <li><strong>CSS</strong> : <strong>Repérage (Wayfinding)</strong> – Ajoutez une règle pour la classe <code>active</code> afin d’indiquer à l’utilisateur quelle page est actuellement ouverte, en modifiant visuellement son apparence.<br>
+        Exemple :  
+        <pre><code class="html">&lt;a href="#" title="À propos" class="active"&gt;À propos&lt;/a&gt;</code></pre>
+        <div class="callout info">
+          <p>
+            « Faciliter la navigation sur un site ou une application aide tout le monde à trouver rapidement ce dont il a besoin.  
+            Un repérage clair est particulièrement utile pour les personnes ayant des difficultés visuelles, motrices ou cognitives, qui peuvent autrement avoir du mal à comprendre où elles se trouvent et comment atteindre leur destination. »  
+            – <a href="https://accessibility.huit.harvard.edu/support-navigation-and-wayfinding" target="_blank" rel="noopener">Université Harvard – Accessibilité numérique</a>
+          </p>
+        </div>
+      </li>
+
+      <li>N’oubliez pas de <strong>Sauvegarder</strong> vos modifications sur votre CodePen.</li>
+    </ol>
+
+    <div class="callout info">
+      <p>
+        CodePen : <a class="inline_disabled" href="https://codepen.io/WebAcademy/pen/qEWvgzv" target="_blank" rel="noopener">Exemple de solution</a>
+      </p>
+    </div>
+
+    <hr>
+
+    <nav>
+      <span><a href="index.html">Accueil Semaine 02</a></span>
+    </nav>
+  </main>
+
+  <footer>
+    <p>Copyright © WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

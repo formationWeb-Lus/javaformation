@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours DOM – Styliser une page sans CSS | WebAcademy</title>
+</head>
+<body>
+
+  <header>
+    <h1>🎨 Cours : Styliser une page avec le DOM en JavaScript</h1>
+    <p><strong>Objectif :</strong> Apprendre à styliser une page web sans utiliser de fichier CSS, uniquement grâce au JavaScript et au DOM.</p>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>1️⃣ Qu’est-ce que le DOM ?</h2>
+      <p>
+        Le <strong>DOM (Document Object Model)</strong> est une représentation vivante de ton document HTML.
+        Il transforme ton code HTML en objets que JavaScript peut manipuler.  
+        Grâce au DOM, tu peux :
+      </p>
+      <ul>
+        <li>Changer le contenu d’un texte ou d’un titre</li>
+        <li>Modifier les styles (couleurs, tailles, marges…)</li>
+        <li>Ajouter ou supprimer des éléments dynamiquement</li>
+      </ul>
+
+      <pre><code>// Exemple simple :
+document.querySelector("h1").style.color = "red";</code></pre>
+      <p>➡️ Ce code change la couleur du titre sans écrire de CSS.</p>
+    </section>
+
+    <section id="pourquoi">
+      <h2>2️⃣ Pourquoi styliser avec JavaScript ?</h2>
+      <p>
+        Normalement, on écrit le design dans un fichier <code>.css</code>.
+        Mais parfois, on veut que le style :
+      </p>
+      <ul>
+        <li>Change automatiquement selon l’heure du jour 🌞 / 🌙</li>
+        <li>S’adapte à une action de l’utilisateur (clic, survol, etc.)</li>
+        <li>Soit ajouté depuis le code JavaScript pour des raisons pédagogiques</li>
+      </ul>
+    </section>
+
+    <section id="selection">
+      <h2>3️⃣ Sélectionner des éléments dans le DOM</h2>
+      <p>Pour modifier un élément, il faut d’abord le sélectionner :</p>
+
+      <pre><code>const header = document.querySelector("header");
+const logo = document.querySelector(".logo");
+const hero = document.querySelector(".hero");</code></pre>
+
+      <p>Chaque variable représente un élément HTML prêt à être stylisé.</p>
+    </section>
+
+    <section id="style">
+      <h2>4️⃣ Appliquer un style avec JavaScript</h2>
+      <p>Chaque élément possède une propriété <code>.style</code> qui te permet d’ajouter du style directement.</p>
+
+      <pre><code>header.style.backgroundColor = "#8b0000";
+header.style.color = "#fff";
+header.style.padding = "20px";</code></pre>
+
+      <p>⚠️ En JavaScript, les propriétés CSS avec tiret s’écrivent en <strong>camelCase</strong>.</p>
+      <p>Par exemple : <code>background-color</code> devient <code>backgroundColor</code>.</p>
+    </section>
+
+    <section id="hero">
+      <h2>5️⃣ Exemple pratique : styliser une section Hero</h2>
+      <p>La section "Hero" est souvent l’image principale du site avec un texte au centre.</p>
+      <pre><code>const hero = document.querySelector(".hero");
+hero.style.position = "relative";
+hero.style.height = "90vh";
+hero.style.display = "flex";
+hero.style.justifyContent = "center";
+hero.style.alignItems = "center";</code></pre>
+
+      <p>➡️ Ici, on centre le texte dans la zone principale du site sans CSS externe.</p>
+    </section>
+
+    <section id="interaction">
+      <h2>6️⃣ Ajouter des effets d’interaction</h2>
+      <p>On peut rendre un bouton interactif avec <code>addEventListener()</code>.</p>
+
+      <pre><code>const btn = document.querySelector("#btn-decouvrir");
+btn.addEventListener("mouseenter", () => {
+  btn.style.backgroundColor = "#fff";
+  btn.style.color = "#8b0000";
+});
+btn.addEventListener("mouseleave", () => {
+  btn.style.backgroundColor = "#f4b400";
+  btn.style.color = "#8b0000";
+});</code></pre>
+
+      <p>🖱️ Le bouton change de couleur quand la souris passe dessus.</p>
+    </section>
+
+    <section id="mode-sombre">
+      <h2>7️⃣ Ajouter un mode sombre et clair</h2>
+      <p>Voici comment créer un bouton qui change le thème du site :</p>
+
+      <pre><code>const modeButton = document.createElement("button");
+modeButton.textContent = "🌙 Mode Sombre";
+document.body.appendChild(modeButton);
+
+modeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    document.body.style.backgroundColor = "#2b2b2b";
+    document.body.style.color = "#e6e6e6";
+    modeButton.textContent = "☀️ Mode Clair";
+  } else {
+    document.body.style.backgroundColor = "#faf7f2";
+    document.body.style.color = "#333";
+    modeButton.textContent = "🌙 Mode Sombre";
+  }
+});</code></pre>
+      <p>🌙 Ce bouton permet de basculer entre un thème sombre et clair.</p>
+    </section>
+
+    <section id="greeting">
+      <h2>8️⃣ Message d’accueil selon l’heure (DOM + logique)</h2>
+      <p>On peut afficher un message différent selon le moment de la journée.</p>
+
+      <pre><code>const greetingElement = document.createElement("div");
+document.body.prepend(greetingElement);
+
+function getGreetingMessage() {
+  const now = new Date();
+  const hour = now.getHours();
+  if (hour < 12) return "☀️ Bonjour et bon appétit du matin !";
+  if (hour < 18) return "🍽️ Bon après-midi au Gourmet !";
+  return "🌙 Bon dîner et bonne soirée au Gourmet !";
+}
+
+greetingElement.textContent = getGreetingMessage();
+greetingElement.style.textAlign = "center";
+greetingElement.style.color = "#8b0000";
+greetingElement.style.fontWeight = "bold";</code></pre>
+
+      <p>🕓 Le texte change automatiquement selon l’heure du jour !</p>
+    </section>
+
+    <section id="typing">
+      <h2>9️⃣ Créer un effet de texte animé (machine à écrire)</h2>
+      <p>Voici un petit effet d’écriture automatique pour le titre du site :</p>
+
+      <pre><code>const textToType = [
+  "Découvrez nos plats raffinés...",
+  "Savourez une expérience unique...",
+  "Bienvenue au Restaurant Le Gourmet !"
+];
+let textIndex = 0;
+let charIndex = 0;
+const heroH2 = document.querySelector(".hero-text h2");
+
+function typeEffect() {
+  if (charIndex < textToType[textIndex].length) {
+    heroH2.textContent += textToType[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else {
+    setTimeout(() => {
+      heroH2.textContent = "";
+      charIndex = 0;
+      textIndex = (textIndex + 1) % textToType.length;
+      typeEffect();
+    }, 2000);
+  }
+}
+
+typeEffect();</code></pre>
+
+      <p>✍️ Le texte s’écrit lettre par lettre, puis recommence.</p>
+    </section>
+
+    <section id="resume">
+      <h2>🔟 Ce qu’il faut retenir</h2>
+      <table border="1" cellpadding="8">
+        <tr><th>Commande</th><th>Utilité</th></tr>
+        <tr><td><code>document.querySelector()</code></td><td>Sélectionner un élément HTML</td></tr>
+        <tr><td><code>element.style</code></td><td>Changer le style d’un élément</td></tr>
+        <tr><td><code>addEventListener()</code></td><td>Réagir à une action (clic, survol…)</td></tr>
+        <tr><td><code>createElement()</code></td><td>Créer un nouvel élément HTML</td></tr>
+        <tr><td><code>classList.toggle()</code></td><td>Activer / désactiver un style</td></tr>
+      </table>
+    </section>
+
+    <section id="exercice">
+      <h2>🧠 Exercice pratique</h2>
+      <p>Crée une page avec un titre et un bouton.</p>
+      <ul>
+        <li>Quand on clique sur le bouton → la couleur du fond change 🎨</li>
+        <li>Le texte du bouton doit aussi changer (par exemple : “Mode clair” / “Mode sombre”)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 WebAcademy – Cours DOM et JavaScript interactif</p>
+  </footer>
+
+  <script>
+    // === STYLISATION GLOBALE VIA JS ===
+    document.body.style.fontFamily = "Poppins, sans-serif";
+    document.body.style.backgroundColor = "#faf7f2";
+    document.body.style.color = "#333";
+    document.body.style.lineHeight = "1.6";
+    document.body.style.padding = "20px";
+    document.body.style.maxWidth = "900px";
+    document.body.style.margin = "auto";
+
+    const header = document.querySelector("header");
+    header.style.backgroundColor = "#8b0000";
+    header.style.color = "white";
+    header.style.padding = "20px";
+    header.style.borderRadius = "10px";
+    header.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+    header.style.marginBottom = "30px";
+
+    document.querySelectorAll("section").forEach(sec => {
+      sec.style.backgroundColor = "white";
+      sec.style.margin = "20px 0";
+      sec.style.padding = "20px";
+      sec.style.borderRadius = "8px";
+      sec.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+    });
+
+    document.querySelector("footer").style.textAlign = "center";
+    document.querySelector("footer").style.marginTop = "40px";
+    document.querySelector("footer").style.padding = "15px";
+    document.querySelector("footer").style.backgroundColor = "#8b0000";
+    document.querySelector("footer").style.color = "white";
+    document.querySelector("footer").style.borderRadius = "10px";
+  </script>
+
+</body>
+</html>

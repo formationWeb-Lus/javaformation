@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Apprenez les bases du HTML, y compris sa structure, ses éléments et ses attributs. Une introduction simple et claire pour bien débuter dans le développement web.">
+  <title>Introduction au HTML</title>
+  <link rel="stylesheet" href="styles/intro.css">
+</head>
+
+<body>
+  <header>
+    <h1>Introduction au HTML</h1>
+  </header>
+
+  <main>
+    <h2>Présentation</h2>
+    <p>Le HTML (<strong>HyperText Markup Language</strong>) est le langage utilisé pour créer la structure d’une page web.
+      Il indique au navigateur <em>ce que chaque élément représente</em> : titre, paragraphe, image, lien, bouton, etc.</p>
+
+    <p>Lorsque vous visitez un site web, voici ce qui se passe :</p>
+
+    <ol>
+      <li>Votre navigateur (comme Chrome, Firefox, ou Edge) envoie une <strong>requête</strong> à un serveur.</li>
+      <li>Le serveur répond en envoyant un fichier HTML.</li>
+      <li>Le navigateur lit le code HTML et l’affiche de manière visuelle à l’écran.</li>
+    </ol>
+
+    <figure>
+      <img src="images/request-response.png" alt="Cycle de requête et réponse">
+      <figcaption>Cycle typique d’une requête entre le navigateur et le serveur.</figcaption>
+    </figure>
+
+    <p>Le HTML travaille souvent avec deux autres langages :</p>
+    <ul>
+      <li><strong>CSS (Cascading Style Sheets)</strong> – pour la présentation (couleurs, polices, mise en page).</li>
+      <li><strong>JavaScript</strong> – pour les interactions (animation, formulaires dynamiques, menus, etc.).</li>
+    </ul>
+
+    <hr>
+
+    <h3>Structure de base d’une page HTML</h3>
+    <p>Toutes les pages HTML suivent une même structure. Voici un exemple :</p>
+
+    <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mes choses préférées&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Choses préférées&lt;/h1&gt;
+    &lt;p&gt;Voici une liste de mes choses préférées.&lt;/p&gt;
+    &lt;p&gt;J’aime ma famille et la nature.&lt;/p&gt;
+    &lt;img src="images/famille.jpg" alt="Ma famille"&gt;
+    &lt;img src="images/montagne.jpg" alt="Une montagne"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h4>Explication ligne par ligne</h4>
+
+    <ul>
+      <li><strong>&lt;!DOCTYPE html&gt;</strong> : indique au navigateur que la page utilise la dernière version du HTML
+        (HTML5).</li>
+      <li><strong>&lt;html lang="fr"&gt;</strong> : englobe tout le code et indique que la page est en français.</li>
+      <li><strong>&lt;head&gt;</strong> : contient les informations invisibles de la page (titre, encodage, liens, etc.).</li>
+      <li><strong>&lt;body&gt;</strong> : contient tout le contenu visible : textes, images, vidéos, boutons, etc.</li>
+    </ul>
+
+    <h4>La section &lt;head&gt;</h4>
+    <p>La section <code>&lt;head&gt;</code> est essentielle pour définir les paramètres techniques et le titre de la page.</p>
+
+    <ul>
+      <li><code>&lt;meta charset="utf-8"&gt;</code> : définit le type de caractères utilisés (UTF-8 prend en charge les
+        lettres accentuées).</li>
+      <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> : permet à la page de
+        s’adapter aux écrans de toutes tailles (mobile, tablette, PC).</li>
+      <li><code>&lt;title&gt;</code> : définit le titre qui apparaît dans l’onglet du navigateur.</li>
+    </ul>
+
+    <h4>La section &lt;body&gt;</h4>
+    <p>Le <code>&lt;body&gt;</code> contient le contenu que l’utilisateur voit réellement. Voici quelques balises
+      courantes :</p>
+
+    <ul>
+      <li><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> : titres (du plus grand au plus petit).</li>
+      <li><code>&lt;p&gt;</code> : paragraphe de texte.</li>
+      <li><code>&lt;img&gt;</code> : image affichée à l’écran (elle a besoin d’un attribut <code>src</code> pour la
+        source et <code>alt</code> pour la description).</li>
+      <li><code>&lt;a href="..."&gt;</code> : lien vers une autre page ou un autre site.</li>
+      <li><code>&lt;ul&gt;</code> et <code>&lt;ol&gt;</code> : listes non ordonnées (puces) et ordonnées (numéros).</li>
+    </ul>
+
+    <div class="tip">
+      💡 <strong>Astuce :</strong> Enregistrez votre fichier avec l’extension <code>.html</code> et ouvrez-le avec votre
+      navigateur pour voir le résultat immédiatement !
+    </div>
+
+    <hr>
+
+    <h3>Activité pratique</h3>
+    <p>Suivez ces étapes pour créer votre première page HTML :</p>
+
+    <ol>
+      <li>Ouvrez votre éditeur de code (par exemple : <strong>Visual Studio Code</strong>).</li>
+      <li>Créez un fichier appelé <strong>ma-premiere-page.html</strong>.</li>
+      <li>Copiez le code d’exemple ci-dessus dans ce fichier.</li>
+      <li>Modifiez le contenu pour y mettre vos propres goûts (films, plats, loisirs, etc.).</li>
+      <li>Ajoutez un paragraphe avec le texte : <strong>J’apprends le développement web !</strong></li>
+      <li>Enregistrez le fichier puis ouvrez-le dans votre navigateur.</li>
+    </ol>
+
+    <div class="tip">
+      💡 <strong>Conseil de pro :</strong> Utilisez <code>Ctrl + S</code> (Windows) ou <code>Cmd + S</code> (Mac) pour
+      enregistrer rapidement vos fichiers.
+    </div>
+
+    <h3>Quelques erreurs fréquentes</h3>
+    <ul>
+      <li>Oublier de fermer une balise (exemple : <code>&lt;p&gt;</code> sans <code>&lt;/p&gt;</code>).</li>
+      <li>Mettre une image dans le mauvais dossier, ce qui casse l’attribut <code>src</code>.</li>
+      <li>Oublier la majuscule dans le nom d’un fichier (le web distingue les majuscules et minuscules !).</li>
+    </ul>
+
+    <h3>Résumé</h3>
+    <p>Le HTML est le squelette de toute page web. Il définit la structure, le sens et la hiérarchie du contenu. Une fois
+      maîtrisé, vous pourrez y ajouter du <strong>CSS</strong> pour le design et du <strong>JavaScript</strong> pour
+      l’interactivité.</p>
+
+    <div class="tip">
+      🚀 <strong>Prochaine étape :</strong> Apprenez à styliser vos pages avec <code>CSS</code> !
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 | Cours d’introduction au HTML – Créé pour les débutants | Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>

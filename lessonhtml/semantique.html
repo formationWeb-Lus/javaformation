@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 130 | Éléments HTML Sémantiques</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://webacademy.github.io/cse-ww-program-pt/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="https://webacademy.github.io/cse-ww-program-pt/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://webacademy.github.io/cse-ww-program-pt/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/course.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/vs2015.min.css">
+  <script src="https://js-cdn.dynatrace.com/jstag/16294a69b33/bf29241ovs/692a19d31f48cd0e_complete.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1>WDD 130<span id="coursetitle">: Fondamentaux du Web</span></h1>
+      <img src="../images/webacademy-logo.svg" alt="Logo WebAcademy" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+    <nav>
+      <span><a href="">sémantique</a></span>
+    </nav>
+
+    <h2>Activité S02 : Éléments HTML Sémantiques</h2>
+
+    <h3>Présentation</h3>
+    <p>HTML décrit la <strong>structure</strong> d'une page web. Cette structure est composée de différentes catégories
+      d'éléments. Certains éléments sont associés aux formulaires et aux tableaux de données. Vous n'êtes <strong>pas</strong> 
+      censé mémoriser toutes les balises HTML. Ce cours vous aidera à vous familiariser avec les éléments les plus utilisés et vous pourrez ensuite consulter d'autres sources fiables pour le reste.</p>
+
+    <h3>Préparation</h3>
+    <p>Les éléments HTML ont une signification spécifique et servent à structurer le contenu d'une page web, mais pas à la
+      styliser. Ils permettent de transmettre clairement le sens au navigateur et aux développeurs. Ensuite, vous utiliserez le CSS pour ajuster l'affichage.</p>
+
+    <h4>Balises HTML Sémantiques et Non-Sémantiques</h4>
+    <p>Les balises HTML se divisent en deux catégories : sémantiques et non-sémantiques. Comprendre la différence vous aidera à écrire des pages plus lisibles et faciles à maintenir.</p>
+
+    <p>Les balises sémantiques ont un sens dans leur nom et indiquent au navigateur et aux développeurs le type de contenu qu'elles contiennent. Les balises non-sémantiques n'ont pas de signification spécifique et servent principalement à la mise en page et au style.</p>
+
+    <h5>Qu'est-ce qu'une balise sémantique ?</h5>
+    <p>Les balises sémantiques décrivent le sens et l'objectif du contenu. En lisant le nom de la balise, on comprend quel type d'information elle contient. Elles rendent le code plus lisible et facilitent l'accès aux lecteurs d'écran.</p>
+
+    <p>Exemples courants :</p>
+    <ul>
+      <li><strong>header</strong> – Contient le contenu introductif ou la navigation</li>
+      <li><strong>nav</strong> – Contient les liens de navigation</li>
+      <li><strong>main</strong> – Contient le contenu principal</li>
+      <li><strong>section</strong> – Représente une section distincte</li>
+      <li><strong>article</strong> – Contenu indépendant et autonome</li>
+      <li><strong>aside</strong> – Contenu lié mais séparé du contenu principal</li>
+      <li><strong>footer</strong> – Contient les informations de fermeture, copyright, etc.</li>
+      <li><strong>h1 à h6</strong> – Différents niveaux de titres</li>
+    </ul>
+
+    <p>Voici un exemple de balises sémantiques :</p>
+
+    <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mon Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Bienvenue sur mon Blog&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="home.html"&gt;Accueil&lt;/a&gt;
+      &lt;a href="about.html"&gt;À propos&lt;/a&gt;
+      &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Mon premier article&lt;/h2&gt;
+      &lt;p&gt;Voici le contenu de mon article.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;
+    &lt;p&gt;Copyright 2024 Mon Blog&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h5>Qu'est-ce qu'une balise non-sémantique ?</h5>
+    <p>Les balises non-sémantiques n’indiquent pas le sens de leur contenu. Elles servent surtout à la mise en page et au style. Les plus courantes sont <code>div</code> et <code>span</code>.</p>
+
+    <p>Exemples :</p>
+    <ul>
+      <li><strong>div</strong> – Conteneur pour grouper ou styliser des sections</li>
+      <li><strong>span</strong> – Conteneur pour styliser une partie de texte</li>
+    </ul>
+
+    <p>Exemple de balises non-sémantiques :</p>
+
+    <pre><code class="html">&lt;div class="container"&gt;
+  &lt;div class="sidebar"&gt;
+    &lt;p&gt;Contenu de la barre latérale&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="content"&gt;
+    &lt;p&gt;Ce paragraphe contient un &lt;span class="highlight"&gt;mot surligné&lt;/span&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h5>Quand utiliser chaque type</h5>
+    <p>Utilisez les balises sémantiques autant que possible pour rendre votre code plus clair et accessible. Les balises non-sémantiques sont utiles pour grouper ou styliser du contenu sans signification sémantique.</p>
+
+    <div class="callout warning">
+      <p>Évitez d’utiliser des anciennes méthodes comme <code>&lt;div id="header"&gt;</code> ou <code>&lt;div id="navigation"&gt;</code>. Préférez les balises sémantiques <code>&lt;header&gt;</code> et <code>&lt;nav&gt;</code>.</p>
+      <p>Inutile d’ajouter des id ou classes redondantes sur les balises sémantiques.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Copyright &copy; WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="../scripts/prevent-code-select.js"></script>
+</body>
+
+</html>
+

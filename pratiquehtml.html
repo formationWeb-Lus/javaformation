@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours HTML – Débutants</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        background-color: #1e40af;
+        color: #fff;
+        padding: 40px 25px;
+        border-radius: 14px;
+        margin-bottom: 35px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; color: #dbeafe; margin: 0; }
+
+    section {
+        background-color: #ffffff;
+        padding: 40px 35px;
+        margin-bottom: 30px;
+        border-radius: 14px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    section h2 { font-size: 1.6em; color: #2563eb; margin-bottom: 20px; }
+
+    section p, section ul { margin: 10px 0; max-width: 800px; text-align: justify; }
+    ul { list-style: disc; padding-left: 20px; }
+
+    pre {
+        background-color: #1e293b;
+        color: #f8f8f2;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        font-size: 0.95em;
+        max-width: 90%;
+        margin: 20px auto;
+        text-align: left;
+    }
+    code { font-family: 'Courier New', monospace; }
+
+    video {
+        width: 100%;
+        max-width: 750px;
+        border-radius: 14px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        margin-top: 20px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.95em;
+        color: #555;
+        padding: 20px 10px;
+        margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+        section { padding: 30px 20px; }
+        header { padding: 30px 15px; }
+    }
+
+    /* Style pour le devoir en rouge */
+.devoir-example {
+    background-color: #fff0f0;      /* fond léger rouge */
+    color: #b91c1c;                  /* texte rouge foncé */
+    padding: 25px 20px;              /* espace intérieur */
+    border-radius: 12px;             /* coins arrondis */
+    text-align: center;              /* texte centré */
+    max-width: 800px;                /* largeur max */
+    margin: 20px auto;               /* centré horizontalement */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ombre légère */
+    line-height: 1.6;                /* espacement des lignes */
+}
+
+.devoir-example h1 {
+    font-size: 1.8em;                /* taille du titre */
+    margin-bottom: 15px;             /* espace sous le titre */
+    color: #991b1b;                  /* titre rouge foncé */
+}
+
+.devoir-example p {
+    font-size: 1.05em;               /* taille du texte */
+    text-align: justify;             /* texte justifié */
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Cours HTML – Débutants</h1>
+    <p>Créer un dossier, un fichier, structure HTML et première page web</p>
+</header>
+
+<!-- PARTIE 1 -->
+<section>
+    <h2>📘 Partie 1 : Créer un dossier sur votre ordinateur</h2>
+    <p>Dans cette première partie, vous allez apprendre à créer un dossier sur votre ordinateur et à l’ouvrir dans Visual Studio Code. Ensuite, vous allez créer les fichiers et sous-dossiers nécessaires pour votre premier site web.</p>
+    <p>Explications détaillées :</p>
+    <ul>
+        <li><strong>Créer un dossier :</strong> Cliquez droit sur votre bureau ou dans un dossier → Nouveau → Dossier → nommez-le <strong>MonPremierSite</strong>.</li>
+        <li><strong>Ouvrir dans VS Code :</strong> Lancez VS Code → Fichier → Ouvrir Dossier → sélectionnez <strong>MonPremierSite</strong> → OK.</li>
+        <li><strong>Créer les fichiers :</strong> Cliquez sur <strong>Nouveau Fichier</strong> → index.html. Créez également les sous dossiers dans le dossier principal <strong>MonPremierSite</strong> (par exemple : <strong>images</strong> et <strong>styles et</strong> <strong>scripts</strong>).</li>
+    </ul>
+    <p>La vidéo ci-dessous vous montre exactement ces étapes :</p>
+    <video src="videos/parti1.mp4" controls></video>
+</section>
+
+<!-- PARTIE 2 -->
+<section>
+    <h2>📗 Partie 2 : Générer la structure HTML automatiquement</h2>
+    <p>Dans cette partie, vous allez apprendre à générer rapidement le squelette HTML d’une page web grâce au raccourci intégré dans VS Code.</p>
+    <p>Explications :</p>
+    <ul>
+        <li>Ouvrez le fichier <strong>index.html</strong> dans VS Code.</li>
+        <li>Tapez simplement le symbole <code>!</code> puis appuyez sur Entrée.</li>
+        <li>VS Code générera automatiquement le squelette HTML suivant :</li>
+    </ul>
+    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <p>La vidéo suivante vous guide pas à pas pour voir comment tout cela fonctionne :</p>
+    <video src="videos/parti2.mp4" controls></video>
+</section>
+
+<!-- PARTIE 3 -->
+<section>
+    <h2>📙 Partie 3 : Les 4 sections principales dans &lt;body&gt;</h2>
+    <p>Dans cette dernière partie, vous allez découvrir comment organiser une page web avec ses 4 sections principales et comment structurer correctement le contenu.</p>
+    <p>Explications :</p>
+    <ul>
+        <li><strong>&lt;header&gt;</strong> : Le haut de la page, incluant titre et logo.</li>
+        <li><strong>&lt;nav&gt;</strong> : Le menu de navigation avec les liens principaux.</li>
+        <li><strong>&lt;main&gt;</strong> : Le contenu principal de la page (texte, images, vidéos).</li>
+        <li><strong>&lt;footer&gt;</strong> : Le bas de page, pour les contacts et copyright.</li>
+    </ul>
+    <p>Exemple de structure complète :</p>
+    <pre><code>
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bienvenue sur mon site&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav&gt;
+        &lt;a href="#"&gt;Accueil&lt;/a&gt; | 
+        &lt;a href="#"&gt;À propos&lt;/a&gt; | 
+        &lt;a href="#"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;main&gt;
+        &lt;h2&gt;Je suis étudiant en développement web&lt;/h2&gt;
+        &lt;p&gt;Je viens de Kinshasa, RDC.&lt;/p&gt;
+        &lt;img src="images/monpays.png" alt="Mon Pays" width="300"&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;© 2025 - Créé par [Votre Nom]&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+    </code></pre>
+    <p>Regardez la vidéo ci-dessous pour bien comprendre l’organisation et le rôle de chaque section :</p>
+    <video src="videos/parti3.mp4" controls></video>
+</section>
+
+<!-- DEVOIR -->
+<section>
+    <h2>📝 Devoir pour les étudiants</h2>
+    <p>Ouvrez votre Visual Studio Code et créez un fichier <strong>index.html</strong> pour réaliser ce devoir. <strong>Ne pas inclure CSS pour l’instant.</strong></p>
+    <p>Instructions :</p>
+    <ul>
+        <li>Écrivez un titre de la forme : <strong>Je suis [votre prénom]</strong> en utilisant la balise <code>&lt;h1&gt;</code>.</li>
+        <li>Ajoutez un paragraphe où vous vous présentez :</li>
+        <ul>
+            <li>Votre prénom et nom</li>
+            <li>Pays et ville d’origine</li>
+            <li>Ce que vous aimez dans la vie</li>
+            <li>Des informations sur votre quartier, votre avenir et votre adresse</li>
+            <li>Des informations sur votre quartier, votre avenir et votre adresse tout ce qui concerne l'adresse doit être dans le footer</li>
+        </ul>
+        <li>Terminez votre texte correctement pour que ce soit complet.</li>
+    </ul>
+    <p>Voici un exemple de rendu attendu :</p>
+    <div class="devoir-example">
+        <h1>Je suis Jiresse</h1>
+        <p>Bonjour, je m’appelle Jiresse Lusa. Je viens de la République Démocratique du Congo, de la ville de Kinshasa.  
+        J’aime apprendre le développement web et créer des projets informatiques.  
+        Je vis dans le quartier [Nom du quartier]. Mon avenir est de devenir un développeur professionnel.  
+        Mon adresse est [Adresse complète].</p>
+    </div>
+    <p>Après avoir écrit votre fichier, ouvrez-le dans un navigateur pour voir le rendu et vérifiez que votre texte est correctement affiché au centre de la page.</p>
+</section>
+
+<footer>
+    © 2025 - Cours HTML pour Débutants | Enseignant : Votre Nom
+</footer>
+
+</body>
+</html>
+
+
+
